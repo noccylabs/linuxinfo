@@ -2,5 +2,7 @@
 if [ -z `which aplay` ]; then 
     exit 1
 fi 
-echo "==== ASLA PLAYBACK DEVICES ===="
-aplay -l | tail -n+2
+
+source      FORMAT
+header      "ALSA Playback Devices"
+command     aplay -l | tail -n+2

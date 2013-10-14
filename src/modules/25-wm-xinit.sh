@@ -4,6 +4,7 @@ if [ ! -e $HOME/.xinitrc ]; then
     exit 1
 fi
 
-echo "=== WINDOW MANAGER ======"
-echo "    DM: None (.xinitrc)"
-echo "  Exec: `cat $HOME/.xinitrc | grep '^exec' | cut -d' ' -f2`"
+source      FORMAT
+header      "Window Manager and Display Manager"
+listitem    "DisplayManager"    "None (.xinitrc)"
+listitem    "Exec"              "$(cat $HOME/.xinitrc | grep '^exec' | cut -d' ' -f2)"

@@ -1,0 +1,17 @@
+function header {
+    echo $1
+    echo "======================================================================"
+}
+function subheader {
+    echo ""
+    echo $1
+    echo "----------------------------------------------------------------------"
+}
+function listitem {
+    printf "%20s: %s\n" "$1" "$2"
+}
+function command {
+    echo "Command output from '$*'"
+    echo ""
+    $*
+}

@@ -3,9 +3,10 @@ if [ -z $(which pacmd 2>/dev/null) ]; then
     exit 1
 fi
 
-echo "==== PULSEAUDIO SINKS ======"
-pacmd list-sinks
+source      FORMAT
+header      "PulseAudio Sinks"
+command     pacmd list-sinks
 
 echo ""
-echo "=== PULSEAUDIO SOURCES ======"
-pacmd list-sources
+header      "PulseAudio Sources"
+command     pacmd list-sources

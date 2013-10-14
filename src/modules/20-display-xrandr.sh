@@ -3,9 +3,8 @@ if [ -z $(which xrandr 2>/dev/null) ]; then
     exit 1;
 fi
 
-echo "=== XRANDR INFORMATION ======"
-xrandr
-echo ""
-
-echo "=== XRANDR PROVIDERS ======"
-xrandr --listproviders
+source      FORMAT
+header      "XRANDR Information"
+command     xrandr
+subheader   "XRANDR Providers"
+command     xrandr --listproviders

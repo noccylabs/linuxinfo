@@ -7,5 +7,6 @@
 # This file is part of LinuxInfo. It is licensed under the GNU GPL version 3.
 #
 
-echo "=== CPUINFO ======"
-cat /proc/cpuinfo
+source      FORMAT
+header      "Processor Information"
+command     cat /proc/cpuinfo

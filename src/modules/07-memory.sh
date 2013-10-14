@@ -7,7 +7,9 @@
 # This file is part of LinuxInfo. It is licensed under the GNU GPL version 3.
 #
 
-echo "=== MEMORY INFO ======"
-cat /proc/meminfo
-echo ""
-free -h
+source      FORMAT
+header      "Memory Information"
+command     cat /proc/meminfo
+
+subheader   "Free Memory"
+command     free -h
