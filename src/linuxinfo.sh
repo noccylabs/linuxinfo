@@ -1,5 +1,11 @@
 #!/bin/bash
 
+source VERSION
+if [ ! -z $RELEASE ]; then KIND="-$RELEASE"; fi
+echo "LinuxInfo v$VERSION$KIND - (c) 2013, NoccyLabs.info"
+echo "Licensed under GNU GPL version 3"
+echo ""
+
 test -e .report && unlink .report
 echo "Analzing system..."
 
