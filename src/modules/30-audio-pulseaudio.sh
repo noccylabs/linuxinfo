@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -z `which pacmd` ]; then
+if [ -z $(which pacmd 2>/dev/null) ]; then
     exit 1
 fi
 
