@@ -321,12 +321,19 @@ Full-Width Styles
   position: absolute;
   width: 210px;
   z-index: 10;
-  bottom: -40px;
+  bottom: -90px;
+  font-weight:bold;
   right: 0;
   height: 70px;
-  background: url('../images/icon_download.png') no-repeat 0% 90%;
+  /*background: url('../images/icon_download.png') no-repeat 0% 90%;*/
 }
-
+#downloads a {
+    color:#0090FF;
+}
+#downloads a:hover {
+    color:#666666;
+    text-decoration:underline;
+}
 .zip_download_link {
   display: block;
   float: right;
