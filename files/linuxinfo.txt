@@ -4,12 +4,16 @@
  ##### ## ##  ##  ####  ##  ## ## ##  ## ##     #### 
 --[linuxinfo 1.0]------------------------------------
 
-=== KERNEL ======
-       OS: Linux GNU/Linux
- Platform: athlon i686
-  Version: 3.11.0-12-generic #19-Ubuntu SMP Wed Oct 9 16:12:00 UTC 2013
+Kernel Information
+======================================================================
+                  OS: Linux GNU/Linux
+            Platform: athlon i686
+             Version: 3.11.0-12-generic #19-Ubuntu SMP Wed Oct 9 16:12:00 UTC 2013
 
-=== CPUINFO ======
+Processor Information
+======================================================================
+Command output from 'cat /proc/cpuinfo'
+
 processor	: 0
 vendor_id	: AuthenticAMD
 cpu family	: 16
@@ -17,7 +21,7 @@ model		: 6
 model name	: AMD Athlon(tm) II P320 Dual-Core Processor
 stepping	: 3
 microcode	: 0x10000c8
-cpu MHz		: 1500.000
+cpu MHz		: 2100.000
 cache size	: 512 KB
 physical id	: 0
 siblings	: 2
@@ -46,7 +50,7 @@ model		: 6
 model name	: AMD Athlon(tm) II P320 Dual-Core Processor
 stepping	: 3
 microcode	: 0x10000c8
-cpu MHz		: 2100.000
+cpu MHz		: 800.000
 cache size	: 512 KB
 physical id	: 0
 siblings	: 2
@@ -69,41 +73,44 @@ address sizes	: 48 bits physical, 48 bits virtual
 power management: ts ttp tm stc 100mhzsteps hwpstate
 
 
-=== MEMORY INFO ======
+Memory Information
+======================================================================
+Command output from 'cat /proc/meminfo'
+
 MemTotal:        3871656 kB
-MemFree:          191648 kB
-Buffers:          245180 kB
-Cached:          1212784 kB
-SwapCached:        31184 kB
-Active:          1951176 kB
-Inactive:        1196372 kB
-Active(anon):    1257800 kB
-Inactive(anon):   483508 kB
-Active(file):     693376 kB
-Inactive(file):   712864 kB
+MemFree:          180620 kB
+Buffers:          270704 kB
+Cached:          1044900 kB
+SwapCached:        31636 kB
+Active:          2077428 kB
+Inactive:        1167156 kB
+Active(anon):    1442332 kB
+Inactive(anon):   545648 kB
+Active(file):     635096 kB
+Inactive(file):   621508 kB
 Unevictable:        2736 kB
 Mlocked:             640 kB
 HighTotal:       3013928 kB
-HighFree:         129332 kB
+HighFree:          54632 kB
 LowTotal:         857728 kB
-LowFree:           62316 kB
+LowFree:          125988 kB
 SwapTotal:       6313500 kB
-SwapFree:        6106024 kB
-Dirty:                32 kB
+SwapFree:        6097160 kB
+Dirty:               940 kB
 Writeback:             0 kB
-AnonPages:       1665956 kB
-Mapped:           260120 kB
-Shmem:             49808 kB
-Slab:             347900 kB
-SReclaimable:     315356 kB
-SUnreclaim:        32544 kB
-KernelStack:        7024 kB
-PageTables:        32488 kB
+AnonPages:       1904864 kB
+Mapped:           305280 kB
+Shmem:             57076 kB
+Slab:             260132 kB
+SReclaimable:     226312 kB
+SUnreclaim:        33820 kB
+KernelStack:        7112 kB
+PageTables:        33828 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:     8249328 kB
-Committed_AS:    8458912 kB
+Committed_AS:    8912984 kB
 VmallocTotal:     122880 kB
 VmallocUsed:       33684 kB
 VmallocChunk:      27784 kB
@@ -117,15 +124,24 @@ Hugepagesize:       2048 kB
 DirectMap4k:       10232 kB
 DirectMap2M:      903168 kB
 
-             total       used       free     shared    buffers     cached
-Mem:          3.7G       3.5G       187M         0B       239M       1.2G
--/+ buffers/cache:       2.1G       1.6G
-Swap:         6.0G       202M       5.8G
+Free Memory
+----------------------------------------------------------------------
+Command output from 'free -h'
 
-=== DISTRIBUTION INFO ======
-  Distribution: Ubuntu
-       Release: Ubuntu Saucy Salamander (development branch) \n \l
-=== XRANDR INFORMATION ======
+             total       used       free     shared    buffers     cached
+Mem:          3.7G       3.5G       176M         0B       264M       1.0G
+-/+ buffers/cache:       2.3G       1.4G
+Swap:         6.0G       211M       5.8G
+
+Distribution Information
+======================================================================
+        Distribution: Ubuntu
+             Release: Ubuntu Saucy Salamander (development branch) \n \l
+
+XRANDR Information
+======================================================================
+Command output from 'xrandr'
+
 Screen 0: minimum 320 x 200, current 1366 x 768, maximum 8192 x 8192
 VGA-0 disconnected (normal left inverted right x axis y axis)
 LVDS connected 1366x768+0+0 (normal left inverted right x axis y axis) 344mm x 193mm
@@ -139,11 +155,17 @@ LVDS connected 1366x768+0+0 (normal left inverted right x axis y axis) 344mm x 1
    640x480        59.4  
 HDMI-0 disconnected (normal left inverted right x axis y axis)
 
-=== XRANDR PROVIDERS ======
+XRANDR Providers
+----------------------------------------------------------------------
+Command output from 'xrandr --listproviders'
+
 Providers: number : 1
 Provider 0: id: 0x54 cap: 0xf, Source Output, Sink Output, Source Offload, Sink Offload crtcs: 2 outputs: 3 associated providers: 0 name:radeon
 
-=== GLX INFO ======
+GLX Information
+======================================================================
+Command output from 'glxinfo'
+
 name of display: :0.0
 display: :0  screen: 0
 direct rendering: Yes
@@ -929,11 +951,15 @@ OpenGL extensions:
 0x1c8  0 dc  0  16  0 r  y .   5  6  5  0 .  .  0 24  8  0  0  0  0  8 1 None
 
 
-=== WINDOW MANAGER ======
-       DM: LightDM/GDM
-  Session: xfce
+Window Manager and Display Manager
+======================================================================
+      DisplayManager: LightDM or GDM
+             Session: xfce
 
-==== PULSEAUDIO SINKS ======
+PulseAudio Sinks
+======================================================================
+Command output from 'pacmd list-sinks'
+
 Welcome to PulseAudio! Use "help" for usage information.
 >>> 2 sink(s) available.
   * index: 1
@@ -950,7 +976,7 @@ Welcome to PulseAudio! Use "help" for usage information.
 	             0.00 dB
 	volume steps: 65537
 	muted: no
-	current latency: 62.35 ms
+	current latency: 73.49 ms
 	max request: 15 KiB
 	max rewind: 64 KiB
 	monitor source: 2
@@ -1018,7 +1044,7 @@ Welcome to PulseAudio! Use "help" for usage information.
 	             -3.00 dB
 	volume steps: 65537
 	muted: no
-	current latency: 27.17 ms
+	current latency: 29.38 ms
 	max request: 3 KiB
 	max rewind: 344 KiB
 	monitor source: 10
@@ -1027,7 +1053,7 @@ Welcome to PulseAudio! Use "help" for usage information.
 	             Stereo
 	used by: 1
 	linked by: 1
-	configured latency: 20.00 ms; range is 1.00 .. 1837.50 ms
+	configured latency: 20.00 ms; range is 16.00 .. 1837.50 ms
 	card: 6 <alsa_card.usb-Logitech_Logitech_USB_Headset-00-Headset>
 	module: 31
 	properties:
@@ -1073,7 +1099,10 @@ Welcome to PulseAudio! Use "help" for usage information.
 				device.icon_name = "audio-headphones"
 	active port: <analog-output-headphones>
 >>> 
-=== PULSEAUDIO SOURCES ======
+PulseAudio Sources
+======================================================================
+Command output from 'pacmd list-sources'
+
 Welcome to PulseAudio! Use "help" for usage information.
 >>> 4 source(s) available.
     index: 2
@@ -1206,7 +1235,7 @@ Welcome to PulseAudio! Use "help" for usage information.
 	             Stereo
 	used by: 0
 	linked by: 0
-	configured latency: 1837.50 ms; range is 1.00 .. 1837.50 ms
+	configured latency: 1837.50 ms; range is 16.00 .. 1837.50 ms
 	monitor_of: 5
 	card: 6 <alsa_card.usb-Logitech_Logitech_USB_Headset-00-Headset>
 	module: 31
@@ -1245,14 +1274,14 @@ Welcome to PulseAudio! Use "help" for usage information.
 	             -29.00 dB
 	volume steps: 65537
 	muted: no
-	current latency: 0.33 ms
+	current latency: 0.27 ms
 	max rewind: 0 KiB
 	sample spec: s16le 1ch 48000Hz
 	channel map: mono
 	             Mono
 	used by: 1
 	linked by: 1
-	configured latency: 20.00 ms; range is 0.50 .. 1837.50 ms
+	configured latency: 20.00 ms; range is 4.00 .. 1837.50 ms
 	card: 6 <alsa_card.usb-Logitech_Logitech_USB_Headset-00-Headset>
 	module: 31
 	properties:
@@ -1298,7 +1327,10 @@ Welcome to PulseAudio! Use "help" for usage information.
 				device.icon_name = "audio-input-microphone"
 	active port: <analog-input-microphone>
 >>> 
-==== ASLA PLAYBACK DEVICES ====
+ALSA Playback Devices
+======================================================================
+
+**** List of PLAYBACK Hardware Devices ****
 card 0: SB [HDA ATI SB], device 0: ALC272X Analog [ALC272X Analog]
   Subdevices: 0/1
   Subdevice #0: subdevice #0
@@ -1309,27 +1341,29 @@ card 2: Headset [Logitech USB Headset], device 0: USB Audio [USB Audio]
   Subdevices: 0/1
   Subdevice #0: subdevice #0
 
-=== OPEN FILES PER PROCESS NAME ======
+Open File Statistics (per binary)
+======================================================================
   20996 komodo
    8436 dropbox
-   7257 gdbus
-   5931 blink
-   5121 gmain
-   3168 mono
+   7618 gdbus
+   5912 blink
+   5354 gmain
+   5141 steam
+   3096 mono
    2952 docky
-   1732 WorkerPoo
-   1705 threaded-
-   1682 dconf
+   2088 threaded-
+   1914 dconf
 
-=== OPEN FILES PER PROCESS ID ======
+Open File Statistics (per pid)
+----------------------------------------------------------------------
   27512 11130
-  15518 8345
-   8985 18203
+  14858 8345
+  12112 18203
    8892 6303
-   8155 17449
-   4464 17973
+   8132 17449
+   5418 17973
    3936 13919
-   3122 13892
+   3038 13892
    1116 23735
-    771 17463
+    856 19730
 
