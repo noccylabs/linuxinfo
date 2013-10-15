@@ -29,8 +29,31 @@ mv .report linuxinfo.txt
 echo "linuxinfo.txt has been created."
 echo ""
 
-# Show the file
-echo "The report will now be displayed using 'less'. Press 'q' on your keyboard to quit less."
-echo "Press any key to continue..."
-read -n1
-less linuxinfo.txt
+let counter=0
+declare -a PUBLISHER;
+for PUBLISHER in publishers/*.sh
+do
+    PUBLISHERS+=$PUBLISHER
+    ((counter=$counter+1))
+    source $PUBLISHER
+    echo "$counter) $NAME"
+done
+
+re='^[0-9]+$'
+while read -r -p "Publish to [1 - $counter]: "; do
+    reply=$REPLY
+    if  [[ $reply =~ $re ]] ; then
+        if (( $reply <= $counter )); then
+            choice=$reply;
+            break;
+        else
+            echo "Please enter a valid number."
+        fi
+
+    else
+        echo "Please enter a number."
+    fi
+done
+source $PUBLISHER
+url=$(publish 'linuxinfo.txt')
+echo "Report uploaded to selected service. It may be viewed at $url"
