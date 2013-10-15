@@ -57,3 +57,4 @@ done
 source $PUBLISHER
 url=$(publish 'linuxinfo.txt')
 echo "Report uploaded to selected service. It may be viewed at $url"
+read -p "Press ENTER to exit"
