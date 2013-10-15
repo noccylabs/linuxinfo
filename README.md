@@ -4,8 +4,10 @@ linuxinfo
 LinuxInfo is a modular script to collect generic system information to aid
 troubleshooting and the filing of bug reports. It is designed to be easy
 to use, and it is packaged using "Makeself" to provide a single runnable
-script that outputs a report, "linuxinfo.txt" that can be e-mailed or
-pasted wherever needed.
+script that outputs a report that in turn can be sent to a number of paste-
+bin like sites or saved.
+
+For packaged downloads, see [noccylabs.github.io/linuxinfo](http://noccylabs.github.io/linuxinfo).
 
 ## Running it
 
