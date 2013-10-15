@@ -29,33 +29,37 @@ mv .report linuxinfo.txt
 echo "linuxinfo.txt has been created."
 echo ""
 
-let counter=0
-PUBLISHER=();
-for PUBLISHER in publishers/*.sh
-do
-    PUBLISHERS+=($PUBLISHER)
-    ((counter=$counter+1))
-    source $PUBLISHER
-    echo "$counter) $NAME"
-done
+if [[ $BASH_VERSINFO < 4 ]]; then
+    mv linuxinfo.txt ~/linuxinfo.txt
+    echo "Report saved to $HOME/linuxinfo.txt"
+else
+    let counter=0
+    PUBLISHER=();
+    for PUBLISHER in publishers/*.sh
+    do
+        PUBLISHERS+=($PUBLISHER)
+        ((counter=$counter+1))
+        source $PUBLISHER
+        echo "$counter) $NAME"
+    done
+    re='^[0-9]+$'
+    while read -r -p "Publish to [1 - $counter]: "; do
+        reply=$REPLY
+        if  [[ $reply =~ $re ]] ; then
+            if (( $reply <= $counter )); then
+                choice=$reply;
+                break;
+            else
+                echo "Please enter a valid number."
+            fi
 
-re='^[0-9]+$'
-while read -r -p "Publish to [1 - $counter]: "; do
-    reply=$REPLY
-    if  [[ $reply =~ $re ]] ; then
-        if (( $reply <= $counter )); then
-            choice=$reply;
-            break;
         else
-            echo "Please enter a valid number."
+            echo "Please enter a number."
         fi
+    done
 
-    else
-        echo "Please enter a number."
-    fi
-done
-
-source "${PUBLISHERS[$choice-1]}"
-url=$(publish 'linuxinfo.txt')
-echo "Report uploaded to selected service. It may be viewed at $url"
-read -p "Press ENTER to exit"
+    source "${PUBLISHERS[$choice-1]}"
+    url=$(publish 'linuxinfo.txt')
+    echo "Report uploaded to selected service. It may be viewed at $url"
+    read -p "Press ENTER to exit"
+fi
