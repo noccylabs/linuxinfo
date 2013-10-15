@@ -30,10 +30,10 @@ echo "linuxinfo.txt has been created."
 echo ""
 
 let counter=0
-declare -a PUBLISHER;
+PUBLISHER=();
 for PUBLISHER in publishers/*.sh
 do
-    PUBLISHERS+=$PUBLISHER
+    PUBLISHERS+=($PUBLISHER)
     ((counter=$counter+1))
     source $PUBLISHER
     echo "$counter) $NAME"
@@ -54,7 +54,8 @@ while read -r -p "Publish to [1 - $counter]: "; do
         echo "Please enter a number."
     fi
 done
-source $PUBLISHER
+
+source "${PUBLISHERS[$choice-1]}"
 url=$(publish 'linuxinfo.txt')
 echo "Report uploaded to selected service. It may be viewed at $url"
 read -p "Press ENTER to exit"
