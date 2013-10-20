@@ -1,5 +1,4 @@
-linuxinfo
-=========
+# linuxinfo
 
 LinuxInfo is a modular script to collect generic system information to aid
 troubleshooting and the filing of bug reports. It is designed to be easy
@@ -17,7 +16,7 @@ For packaged downloads, see [noccylabs.github.io/linuxinfo](http://noccylabs.git
 
 The script will unpack in a temporary folder, create a report in the current
 directory and display it. The filename of the report is "linuxinfo.txt"
-    
+
 ### From source:
 
 Use the `ruh.sh` script in the source root:
@@ -30,7 +29,7 @@ directory.
 ## Making it
 
     $ ./make.sh
-    
+
 The script will be generated in the `out/` directory.
 
 

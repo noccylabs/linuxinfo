@@ -13,3 +13,5 @@ listitem    "OS"        "$(uname -os)"
 listitem    "Platform"  "$(uname -ip)"
 listitem    "Version"   "$(uname -rv)"
 
+subheader   "Loaded Modules"
+command     lsmod
