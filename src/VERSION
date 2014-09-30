@@ -1,5 +1,5 @@
 # Master version
-VERSION=1.0.3
+VERSION=1.0.4
 
 # If you create your own executables, set release to the name of your specific fork.
 RELEASE=nl

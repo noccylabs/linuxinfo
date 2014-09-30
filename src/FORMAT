@@ -14,4 +14,16 @@ function command {
     echo "Command output from '$*'"
     echo ""
     $*
+    echo ""
+}
+function readfile {
+    if [ -e $1 ]; then
+        echo "Contents of '$1'"
+        echo ""
+        cat $1
+        echo ""
+    else
+        echo "File not found ($1)"
+        echo ""
+    fi
 }
